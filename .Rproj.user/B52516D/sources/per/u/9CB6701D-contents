@@ -1,0 +1,10 @@
+setwd("G:\hisat2-2.2.0\ballgown\Rdata")
+
+
+#the library needed
+
+library(ballgown)
+library(RSkittleBrewer)
+library(genefilter)
+library(dplyr)
+library(devtools)

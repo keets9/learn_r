@@ -1,0 +1,55 @@
+
+#create dataframe, adding a row to dataframe and saving it in excel file
+
+library(xlsx)
+name<-c("damon","stefan","kalus","matt","taylor")
+maths<-c(87,98,78,89,34)
+english<-c(89,78,99,78,65)
+science<-c(90,98,88,89,60)
+df14<-data.frame(name,maths,english,science,row.names = NULL)
+df14
+write.xlsx(df14,file="class.xlsx",sheetName = "classA",append= FALSE)
+name<-c("jeremy")
+x1<-77
+x2<-66
+x3<-57
+newrow<-data.frame(name,x1,x2,x3)
+names(newrow)<-names(df14)
+df15<-rbind(df14,newrow)
+df15
+write.xlsx(df15,file="class.xlsx",sheetName = "classA",append= FALSE)
+
+quantile(df15 $english)
+list(df15 $name)
+plot(df15 $maths)
+ tb=table(df15$science)
+pie (df15 $science)
+
+X=mean(df15 $maths)
+sqrt(X)
+sum(df15 $science)
+cov(df15 [ ,2:4]) #col1 has names used to calculate covariances for a pair of variables, or a covariance matrix when a matrix containing several variables is given as input.
+cor(df15[ ,2:4]) #cor() computes the correlation coefficient. cor. test() test for association/correlation between paired samples. It returns both the correlation coefficient and the significance level(or p-value) of the correlation .
+df15
+nrow(df15)
+ncol(df15)
+
+#plotting
+
+boxplot(maths~english, data = df15)#The image above is a boxplot. A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”). It can tell you about your outliers and what their values are. It can also tell you if your data is symmetrical, how tightly your data is grouped, and if and how your data is skewed.
+with(df15,plot(science,maths) )
+plot(df15[ ,-c(1,6)])#lol
+#another type of command
+attach(df15)
+plot(maths~science)
+
+#transpose the data frame
+
+subset(df15,df15$maths<80)
+subset(df15,df15$science>80)
+df17=subset(df15,df15$english<66)
+df17
+
+#Access ballgown files in R
+
+                                  
